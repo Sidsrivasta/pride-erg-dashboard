@@ -431,6 +431,55 @@
             color: var(--accent);
         }
 
+        /* Document links */
+        .doc-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            background: #1f2233;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            border: 1px solid transparent;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .doc-link:hover {
+            border-color: var(--accent);
+            background: #242840;
+        }
+
+        .doc-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .doc-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .doc-name {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .doc-meta {
+            font-size: 11px;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .doc-arrow {
+            font-size: 18px;
+            color: var(--text-muted);
+            flex-shrink: 0;
+        }
+
         /* Budget table */
         .budget-table {
             width: 100%;
@@ -592,7 +641,15 @@
                     <li class="task-item">
                         <div class="task-check in-progress">◉</div>
                         <div class="task-content">
-                            <div class="task-name">Finalize funding approval &amp; get P-Card/cost center</div>
+                            <div class="task-name">Pride approval &amp; debit card from MJ</div>
+                            <div class="task-owner">Husein L. · Target: This week</div>
+                        </div>
+                        <span class="badge badge-yellow task-badge">In Progress</span>
+                    </li>
+                    <li class="task-item">
+                        <div class="task-check in-progress">◉</div>
+                        <div class="task-content">
+                            <div class="task-name">Finalize funding approval &amp; cost center allocation</div>
                             <div class="task-owner">Husein L. &amp; Kelly M. · In progress</div>
                         </div>
                         <span class="badge badge-yellow task-badge">In Progress</span>
@@ -601,23 +658,31 @@
                         <div class="task-check in-progress">◉</div>
                         <div class="task-content">
                             <div class="task-name">Design event poster / flyer</div>
-                            <div class="task-owner">Sid Y. · Canva blocked — need alternative</div>
+                            <div class="task-owner">Sid Y. · In progress</div>
+                        </div>
+                        <span class="badge badge-yellow task-badge">In Progress</span>
+                    </li>
+                    <li class="task-item">
+                        <div class="task-check in-progress">◉</div>
+                        <div class="task-content">
+                            <div class="task-name">Draft intern comms (BCC, via coordinators)</div>
+                            <div class="task-owner">Sid S. · Review by Alicia &amp; Rachael</div>
                         </div>
                         <span class="badge badge-yellow task-badge">In Progress</span>
                     </li>
                     <li class="task-item">
                         <div class="task-check pending"></div>
                         <div class="task-content">
-                            <div class="task-name">Create itemized supply &amp; refreshment list</div>
-                            <div class="task-owner">Full team · Target: Jun 20</div>
+                            <div class="task-name">AIA storage — pick up decorations &amp; supplies</div>
+                            <div class="task-owner">Sid Y. · Date TBD</div>
                         </div>
                         <span class="badge badge-blue task-badge">To Do</span>
                     </li>
                     <li class="task-item">
                         <div class="task-check pending"></div>
                         <div class="task-content">
-                            <div class="task-name">Draft intern comms (BCC, via coordinators)</div>
-                            <div class="task-owner">Sid S. · Review by Alicia &amp; Rachael</div>
+                            <div class="task-name">Create itemized supply &amp; refreshment list</div>
+                            <div class="task-owner">Full team · Target: Jun 20</div>
                         </div>
                         <span class="badge badge-blue task-badge">To Do</span>
                     </li>
@@ -740,10 +805,6 @@
                     <div class="risk-title">Primary venue could be bumped for customer/supplier events</div>
                     <div class="risk-desc"><strong>Mitigation:</strong> Backup rooms secured in PS3 3F (Bee Creek Park + 14-person rooms). Low risk due to post-July 4th timing.</div>
                 </div>
-                <div class="risk-item risk-medium">
-                    <div class="risk-title">Canva blocked on corporate network</div>
-                    <div class="risk-desc"><strong>Mitigation:</strong> Use PowerPoint, Google Slides, or Adobe Express for poster design. Explore AI-generated templates.</div>
-                </div>
                 <div class="risk-item risk-high">
                     <div class="risk-title">Privacy compliance for intern outreach</div>
                     <div class="risk-desc"><strong>Mitigation:</strong> All comms routed through intern coordinators (Alicia/Rachael). Always BCC. No direct messages to interns.</div>
@@ -769,44 +830,34 @@
                 </div>
             </div>
 
-            <!-- Budget & Supply Estimates -->
+            <!-- Documents & Spreadsheets -->
             <div class="card full-width">
-                <div class="card-title"><span class="icon">💰</span> Budget &amp; Supply Estimates</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div>
-                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Pride ERG Allocation</div>
-                        <table class="budget-table">
-                            <thead><tr><th>Category</th><th>Est. Cost</th><th>Source</th><th>Status</th></tr></thead>
-                            <tbody>
-                                <tr><td>Craft Supplies</td><td>~$150–200</td><td>Pride Fund (AAPI Heritage)</td><td><span class="badge badge-yellow" style="font-size:10px">Pending</span></td></tr>
-                                <tr><td>Coffee &amp; Refreshments</td><td>~$100–150</td><td>Pride Fund (AAPI Heritage)</td><td><span class="badge badge-yellow" style="font-size:10px">Pending</span></td></tr>
-                                <tr><td>Pride / AAPI Decorations</td><td>$0–50</td><td>Existing ERG inventory</td><td><span class="badge badge-green" style="font-size:10px">Available</span></td></tr>
-                                <tr class="total-row"><td><strong>Conservative Total</strong></td><td><strong>~$300</strong></td><td colspan="2"><span class="badge badge-blue" style="font-size:10px">From Pride Budget</span></td></tr>
-                            </tbody>
-                        </table>
-                        <div style="margin-top: 12px; padding: 10px 12px; background: #1f2233; border-radius: 8px; border-left: 3px solid var(--info);">
-                            <div style="font-size: 12px; color: var(--text-muted);">
-                                <strong style="color: var(--info);">Note:</strong> Pride ERG has existing decorations (Husein). AIA has Lunar New Year decorations that may qualify as AAPI. Extra funds can go toward additional Pride &amp; AAPI month decor.
-                            </div>
+                <div class="card-title"><span class="icon">�</span> Documents &amp; Resources</div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                    <a href="#" target="_blank" class="doc-link">
+                        <div class="doc-icon">📊</div>
+                        <div class="doc-info">
+                            <div class="doc-name">Pride ERG Intern Events Tracker</div>
+                            <div class="doc-meta">26 Pride ERG Intern Events.xlsx · Sid Yi</div>
                         </div>
-                    </div>
-                    <div>
-                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Reference: AIA Prior Event (~70 attendees)</div>
-                        <table class="budget-table">
-                            <thead><tr><th>Detail</th><th>Value</th></tr></thead>
-                            <tbody>
-                                <tr><td>Total Attendees</td><td>~70</td></tr>
-                                <tr><td>Total Budget Used</td><td>Covered all craft supplies</td></tr>
-                                <tr><td>Food &amp; Coffee</td><td>Ran out early</td></tr>
-                                <tr><td>Lesson Learned</td><td style="color: var(--warning);">Order 1.5× estimated qty for refreshments</td></tr>
-                            </tbody>
-                        </table>
-                        <div style="margin-top: 12px; padding: 10px 12px; background: #1f2233; border-radius: 8px; border-left: 3px solid var(--warning);">
-                            <div style="font-size: 12px; color: var(--text-muted);">
-                                <strong style="color: var(--warning);">Purchasing Options:</strong> Kelly's P-Card with allocated cost center, or Amazon via ODW Punchout catalog. Alternatively, provide supply list to ERG leads for direct purchasing.
-                            </div>
+                        <div class="doc-arrow">→</div>
+                    </a>
+                    <a href="#" target="_blank" class="doc-link">
+                        <div class="doc-icon">📋</div>
+                        <div class="doc-info">
+                            <div class="doc-name">AIA Coffee Chats &amp; Craft Estimates</div>
+                            <div class="doc-meta">AIA Coffee Chats and Craft Estimates.xlsx · Sid Yi</div>
                         </div>
-                    </div>
+                        <div class="doc-arrow">→</div>
+                    </a>
+                    <a href="#" target="_blank" class="doc-link">
+                        <div class="doc-icon">📧</div>
+                        <div class="doc-info">
+                            <div class="doc-name">Intern Interest List (Pride ERG)</div>
+                            <div class="doc-meta">16 RR/Parmer · via Alicia Wilson</div>
+                        </div>
+                        <div class="doc-arrow">→</div>
+                    </a>
                 </div>
             </div>
 
